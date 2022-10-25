@@ -8,7 +8,7 @@ func fakeApiCaller(callback : @escaping(_ value : Int)->()) {
 
 let semaphore = DispatchSemaphore(value : 0)
 let newQueue = DispatchQueue.global(qos: .background)
-let newGroup = DispatchGroup()
+//let newGroup = DispatchGroup()
 
 var arr = [Int]()
 

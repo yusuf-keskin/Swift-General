@@ -71,6 +71,7 @@ func depthFirstTreversal (tree: BinaryTree<Int>) -> [Int] {
     return result
 }
 
+
 func breadLevelByLevel<T>(tree: BinaryTree<T>) -> [[T]] {
     var result = [[T]]()
     var queue = [tree]
@@ -100,6 +101,32 @@ func breadLevelByLevel<T>(tree: BinaryTree<T>) -> [[T]] {
     return result
 }
 
+
+func preOrderTraversal(node: BinaryTree<Int>?) {
+    guard let node = node else { return }
+    print(node.value)
+    preOrderTraversal(node: node.leftChild)
+    preOrderTraversal(node: node.rightChild)
+}
+func inOrderTraversal(node: BinaryTree<Int>?) {
+    guard let node = node else { return }
+    inOrderTraversal(node: node.leftChild)
+    print(node.value)
+    inOrderTraversal(node: node.rightChild)
+}
+func postOrderTraversal(node: BinaryTree<Int>?) {
+    guard let node = node else { return }
+    postOrderTraversal(node: node.leftChild)
+    postOrderTraversal(node: node.rightChild)
+    print(node.value)
+}
+
 breadFirstTreversal(tree: tree)
 depthFirstTreversal(tree: tree)
 breadLevelByLevel(tree: tree)
+
+preOrderTraversal(node: tree)
+inOrderTraversal(node: tree)
+postOrderTraversal(node: tree)
+
+
